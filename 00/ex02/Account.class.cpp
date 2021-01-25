@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:56:50 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/11/27 00:43:31 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/01/25 11:41:39 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ Account::Account(int initial_deposit)
 Account::~Account()
 {
     _displayTimestamp();
-    std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
+    std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed";
+    if (_accountIndex != 0)
+        std::cout << std::endl;
 }
 
 int      Account::getNbAccounts( void ){
     return (_nbAccounts);}
 int      Account::getTotalAmount( void ){
-    return {_totalAmount};}
+    return (_totalAmount);}
 int      Account::getNbDeposits( void ){
     return (_totalNbDeposits);}
 int      Account::getNbWithdrawals( void ){
@@ -65,6 +67,7 @@ time_t      rawtime;
     std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_min;
     std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_sec;
     std::cout << "] ";
+    // std::cout << "[19920104_091532] ";
 }
 
 void     Account::displayAccountsInfos( void )
@@ -114,7 +117,7 @@ void	Account::displayStatus( void ) const
 {
     _displayTimestamp();
     std::cout << "index:" << _accountIndex;
-    std::cout << ";amount:" << _totalAmount;
-    std::cout << ";deposits:" << _totalNbDeposits;
-    std::cout << ";withdrawals:" << _totalNbWithdrawals << std::endl;
+    std::cout << ";amount:" << _amount;
+    std::cout << ";deposits:" << _nbDeposits;
+    std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 } 
