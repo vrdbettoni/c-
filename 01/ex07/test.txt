@@ -1,0 +1,7 @@
+bonjour
+salut
+rentrer
+renvoie
+une
+nouvelle
+chainde de caractere
