@@ -2,28 +2,30 @@
 
 int main()
 {
+    int     time = 500000;
     Logger logger("log");
 
     logger.log("logToFile", "Ceci");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToFile", "est un");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToFile", "magnifique");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToFile", "test pour");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToFile", "verifier");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToFile", "les logs");
     logger.log("logToConsole", "Cela marche");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToConsole", "aussi");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToConsole", "dans la");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToConsole", "console");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToConsole", "bien");
-    std::this_thread::sleep_for (std::chrono::seconds(1));
+    usleep(time);
     logger.log("logToConsole", "evidement");
+    return(0);
 }

@@ -6,7 +6,7 @@ void Logger::logToConsole(std::string log){std::cout << makeLogEntry(log) << std
 
 void Logger::logToFile(std::string log)
 {
-    std::ofstream tofile (_file, std::ofstream::app);
+    std::ofstream tofile (_file.c_str(), std::ofstream::app);
     tofile << makeLogEntry(log) << std::endl;
 }
 

@@ -3,10 +3,9 @@
 #include <iosfwd>
 #include <ctime>
 #include <iomanip>
-#include <chrono>
-#include <thread>
 #include <sstream>
 #include <fstream>
+#include <unistd.h>
 
 class Logger
 {

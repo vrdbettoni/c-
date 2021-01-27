@@ -17,7 +17,8 @@ int main(int ac, char **av)
     }
     int len_s1 = strlen(av[2]);
     int len_s2 = strlen(av[3]);
-    std::ofstream finalFile(fileName += ".REPLACE");
+    fileName += ".REPLACE";
+    std::ofstream finalFile(fileName.c_str(), std::ios_base::out);
     while (std::getline (file, buffer)) {
         for (std::string::size_type pos = 0u; (pos = buffer.find(av[2], pos)) != std::string::npos; pos += len_s2)
             buffer.replace(pos, len_s1, av[3]);
