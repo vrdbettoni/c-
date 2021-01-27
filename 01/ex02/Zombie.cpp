@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 19:28:54 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/06/27 03:13:45 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/01/27 11:18:37 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void    Zombie::advert()
 
 std::string Zombie::getName(int j)
 {
-    char    allLetters[56]{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    char    b_name[11]{0};
+    char    allLetters[56] = ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    char    b_name[11];
 
     srand(time(NULL) + j);
     for (int i = 0; i < 10; i++)
