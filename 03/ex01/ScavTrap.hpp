@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 
-class FragTrap
+class ScavTrap
 {
     public:
         ScavTrap();
@@ -15,12 +15,13 @@ class FragTrap
         void meleeAttack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        void vaulthunter_dot_exe(std::string const &target);
+        void challengeNewcomer(void);
 
     private:
         int _hitPoints;
         int _maxHitPoints;
         int _energyPoints;
+        int _maxEnergyPoints;
         int _level;
         int _meleeAttackDamage;
         int _rangedAttackDamage;

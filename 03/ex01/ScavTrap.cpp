@@ -1,46 +1,47 @@
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap()
+ScavTrap::ScavTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
-    std::cout << "His name is Bobby" << std::endl;
-    _name = "Bobby";
-    FragTrap::setStats();
+    std::cout << "SCAV " << "Default constructor called" << std::endl;
+    std::cout << "SCAV " << "His name is serena" << std::endl;
+    _name = "Serena";
+    ScavTrap::setStats();
 }
 
-FragTrap::FragTrap(std::string name) : _name(name)
+ScavTrap::ScavTrap(std::string name) : _name(name)
 {
-    std::cout << "FragTrap " << _name << " created" << std::endl;
-    FragTrap::setStats();
+    std::cout << "SCAV " << "ScavTrap " << _name << " created" << std::endl;
+    ScavTrap::setStats();
 }
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
-    std::cout << _name << " deleted" << std::endl;
+    std::cout << "SCAV " << _name << " deleted" << std::endl;
 }
 
-void FragTrap::setStats()
+void ScavTrap::setStats()
 {
     _hitPoints = 100;
     _maxHitPoints = 100;
-    _energyPoints = 100;
+    _energyPoints = 50;
+    _maxEnergyPoints = 50;
     _level = 1;
-    _meleeAttackDamage = 30;
-    _rangedAttackDamage = 20;
-    _armorReduction = 5;
+    _meleeAttackDamage = 20;
+    _rangedAttackDamage = 15;
+    _armorReduction = 3;
 }
 
-void FragTrap::rangedAttack(std::string const &target)
+void ScavTrap::rangedAttack(std::string const &target)
 {
-    std::cout << "FR4G-TP " << _name << " attack " << target << " with peebles, for " << _rangedAttackDamage << std::endl;
+    std::cout << "SCAV " << _name << " attack " << target << " with a gun, for " << _rangedAttackDamage << std::endl;
 }
 
-void FragTrap::meleeAttack(std::string const &target)
+void ScavTrap::meleeAttack(std::string const &target)
 {
-    std::cout << "FR4G-TP " << _name << " attack " << target << " with a shovel , for " << _meleeAttackDamage << std::endl;
+    std::cout << "SCAV " << _name << " attack " << target << " with her mind , for " << _meleeAttackDamage << std::endl;
 }
 
-void FragTrap::takeDamage(unsigned int amount)
+void ScavTrap::takeDamage(unsigned int amount)
 {
     long long _amount = amount;
 
@@ -49,13 +50,13 @@ void FragTrap::takeDamage(unsigned int amount)
         if (_amount > _hitPoints)
             _amount = _hitPoints;
         _hitPoints -= _amount;
-        std::cout << _name << " loses " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
+        std::cout << "SCAV " << _name << " loses " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
     }
     else
-        std::cout << _name << " is so strong" << std::endl;
+        std::cout << "SCAV " << _name << " is so strong" << std::endl;
 }
 
-void FragTrap::beRepaired(unsigned int amount)
+void ScavTrap::beRepaired(unsigned int amount)
 {
     long long _amount = amount;
 
@@ -64,16 +65,16 @@ void FragTrap::beRepaired(unsigned int amount)
         _hitPoints += _amount;
     if (_hitPoints > _maxHitPoints)
         _hitPoints = _maxHitPoints;
-     std::cout << _name << " gained " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
+     std::cout << "SCAV " << _name << " gained " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
 }
 
-// void FragTrap::vaulthunter_dot_exe(std::string const &target)
-// {
-//     std::string attack[5] = {" with an m&m's", " with an egg", " with nothing", " with a knife", " with a saber"};
-//     if (_energyPoints >= 25){
-//         std::cout << _name << " attack " << target << attack[(rand()%50) / 10] << std::endl;
-//         _energyPoints -= 25;
-//     }
-//     else
-//         std::cout << "not enough energy points" << std::endl;
-// }
+void ScavTrap::challengeNewcomer()
+{
+    std::string challenge[5] = {" try to catch a hen", " run", " is wimming 10km", " try to fly", " can't do the challenge"};
+    if (_energyPoints >= 25){
+        std::cout << "SCAV " << _name << challenge[(rand()%50) / 10] << std::endl;
+        _energyPoints -= 25;
+    }
+    else
+        std::cout << "SCAV " << "not enough energy points" << std::endl;
+}
