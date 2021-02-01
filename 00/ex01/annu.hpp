@@ -6,7 +6,7 @@
 /*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 19:16:33 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/06/15 19:16:35 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/02/01 19:40:25 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@
 
 class Annuaire
 {
-private:
-	Contact	contacts[8];
-	int		amount;
-public:
-	Annuaire();
-	~Annuaire();
+	private:
+		Contact	contacts[8];
+		int		amount;
+		
+	public:
+		Annuaire();
+		~Annuaire();
 
-	void	show_header(void);
-	void	add_contact(void);
-	void	search_contact(void);
-	void	show_search_header(void);
+		void	show_header(void);
+		void	add_contact(void);
+		void	search_contact(void);
+		void	show_search_header(void);
 };
 
 #endif

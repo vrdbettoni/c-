@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 15:56:50 by vroth-di          #+#    #+#             */
-/*   Updated: 2021/01/25 11:41:39 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/02/01 19:58:44 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
-#include <chrono>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -38,7 +37,7 @@ Account::~Account()
 {
     _displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed";
-    if (_accountIndex != 0)
+    if (_accountIndex != 7)
         std::cout << std::endl;
 }
 
@@ -53,7 +52,7 @@ int      Account::getNbWithdrawals( void ){
 
 void     Account::_displayTimestamp(void)
 {
-time_t      rawtime;
+    time_t      rawtime;
     struct tm*  timeinfo;
 
     time (&rawtime);
