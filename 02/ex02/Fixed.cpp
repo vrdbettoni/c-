@@ -66,12 +66,12 @@ int Fixed::toInt(void) const
 }
 
 //Compare operator
-bool Fixed::operator>(const Fixed& newone){return(this->getRawBits() > newone.getRawBits());}
-bool Fixed::operator<(const Fixed& newone){return(this->getRawBits() < newone.getRawBits());}
-bool Fixed::operator>=(const Fixed& newone){return(this->getRawBits() >= newone.getRawBits());}
-bool Fixed::operator<=(const Fixed& newone){return(this->getRawBits() <= newone.getRawBits());}
-bool Fixed::operator==(const Fixed& newone){return(this->getRawBits() == newone.getRawBits());}
-bool Fixed::operator!=(const Fixed& newone){return(this->getRawBits() != newone.getRawBits());}
+bool Fixed::operator>(const Fixed& newone)  const {return(this->getRawBits() > newone.getRawBits());}
+bool Fixed::operator<(const Fixed& newone) const {return(this->getRawBits() < newone.getRawBits());}
+bool Fixed::operator>=(const Fixed& newone) const {return(this->getRawBits() >= newone.getRawBits());}
+bool Fixed::operator<=(const Fixed& newone) const {return(this->getRawBits() <= newone.getRawBits());}
+bool Fixed::operator==(const Fixed& newone) const {return(this->getRawBits() == newone.getRawBits());}
+bool Fixed::operator!=(const Fixed& newone) const {return(this->getRawBits() != newone.getRawBits());}
 
 //Arithmetic operator
 Fixed Fixed::operator+(const Fixed& newone)
@@ -102,9 +102,40 @@ Fixed Fixed::operator/(const Fixed& newone)
     return (ret);
 }
 
+//Post & Pre incrementation
+Fixed Fixed::operator++()
+{
+    fixed_value++;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    fixed_value++;
+    return (tmp);
+}
+
+Fixed Fixed::operator--()
+{
+    fixed_value++;
+    return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+    fixed_value++;
+    return (tmp);
+}
+
 //Member function min / max
-Fixed& Fixed::min(Fixed& a, const Fixed& b){return (a < b ? a : b);}
-Fixed& Fixed::max(Fixed& a, const Fixed& b){return (a < b ? b : a);}
+Fixed& Fixed::min(Fixed& a, Fixed& b){return (a < b ? a : b);}
+Fixed& Fixed::max(Fixed& a, Fixed& b){return (a < b ? b : a);}
+Fixed const &Fixed::min(const Fixed& a, const Fixed& b){return (a < b ? a : b);}
+Fixed const &Fixed::max(const Fixed& a, const Fixed& b){return (a < b ? b : a);}
 //Overload function min / max
-Fixed& min(Fixed& a, const Fixed& b){return (a < b ? a : b);}
-Fixed& max(Fixed& a, const Fixed& b){return (a < b ? b : a);}
+Fixed& min(Fixed& a, Fixed& b){return (a < b ? a : b);}
+Fixed& max(Fixed& a, Fixed& b){return (a < b ? b : a);}
+Fixed const &min(const Fixed& a, const Fixed& b){return (a < b ? a : b);}
+Fixed const &max(const Fixed& a, const Fixed& b){return (a < b ? b : a);}
