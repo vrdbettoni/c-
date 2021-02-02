@@ -19,5 +19,4 @@ int main(void)
     }
     a.takeDamage(1000);
     return (0);
-
 }
