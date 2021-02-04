@@ -19,6 +19,28 @@ FragTrap::~FragTrap()
     std::cout << "FR4G-TP " << _name << " deleted" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other)
+{
+    std::cout << "Assignement FlagTrap called" << std::endl;
+    if (this != &other){
+        _hitPoints = other._hitPoints;
+        _maxHitPoints = other._maxHitPoints;
+        _energyPoints = other._energyPoints;
+        _maxEnergyPoints = other._maxEnergyPoints;
+        _level = other._level;
+        _meleeAttackDamage = other._meleeAttackDamage;
+        _rangedAttackDamage = other._rangedAttackDamage;
+        _armorReduction = other._armorReduction;
+    }
+    return (*this);
+}
+
 void FragTrap::setStats()
 {
     _hitPoints = 100;

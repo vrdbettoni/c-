@@ -19,6 +19,29 @@ ScavTrap::~ScavTrap()
     std::cout << "SCAV " << _name << " deleted" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    std::cout << "Assignement ScavTrap called" << std::endl;
+    if (this != &other){
+        _hitPoints = other._hitPoints;
+        _maxHitPoints = other._maxHitPoints;
+        _energyPoints = other._energyPoints;
+        _maxEnergyPoints = other._maxEnergyPoints;
+        _level = other._level;
+        _meleeAttackDamage = other._meleeAttackDamage;
+        _rangedAttackDamage = other._rangedAttackDamage;
+        _armorReduction = other._armorReduction;
+    }
+    return (*this);
+}
+
+
 void ScavTrap::setStats()
 {
     _hitPoints = 100;

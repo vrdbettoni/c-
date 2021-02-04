@@ -10,7 +10,10 @@ class ScavTrap
         ScavTrap();
         ScavTrap(std::string name);
         ~ScavTrap();
-    
+
+        ScavTrap(const ScavTrap&);
+        ScavTrap& operator=(const ScavTrap&);
+
         void rangedAttack(std::string const &target);
         void meleeAttack(std::string const &target);
         void takeDamage(unsigned int amount);

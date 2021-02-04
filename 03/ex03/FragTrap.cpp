@@ -19,6 +19,19 @@ FragTrap::~FragTrap()
     std::cout << _name << " deleted" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}
+
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
     std::string attack[5] = {" with an m&m's", " with an egg", " with nothing", " with a knife", " with a saber"};

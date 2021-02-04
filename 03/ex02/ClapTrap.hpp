@@ -11,6 +11,9 @@ class ClapTrap
         ClapTrap(std::string name);
         ~ClapTrap();
 
+        ClapTrap(const ClapTrap&);
+        ClapTrap& operator=(const ClapTrap&);
+
         void rangedAttack(std::string const &target);
         void meleeAttack(std::string const &target);
         void takeDamage(unsigned int amount);

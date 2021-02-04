@@ -15,6 +15,19 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name), _name(name)
 
 NinjaTrap::~NinjaTrap(){std::cout << _name << " deleted" << std::endl;}
 
+NinjaTrap::NinjaTrap(const NinjaTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+NinjaTrap& NinjaTrap::operator=(const NinjaTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}
+
 //Member Functions
 void NinjaTrap::ninjaShoebox(ClapTrap &at){std::cout << _name << " hit you but you can't see him, " << at.getName() << std::endl;}
 void NinjaTrap::ninjaShoebox(ScavTrap &at){std::cout << _name << " throw a shuriken on " << at.getName() << std::endl;}

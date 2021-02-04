@@ -11,7 +11,10 @@ class FragTrap : public ClapTrap
         FragTrap();
         FragTrap(std::string name);
         ~FragTrap();
-    
+
+        FragTrap(const FragTrap&);
+        FragTrap& operator=(const FragTrap&);
+
         void vaulthunter_dot_exe(std::string const &target);
 
     private:

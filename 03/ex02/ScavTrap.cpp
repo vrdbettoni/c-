@@ -19,6 +19,19 @@ ScavTrap::~ScavTrap()
     std::cout << _name << " deleted" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}
+
 void ScavTrap::setStats()
 {
     _hitPoints = 100;

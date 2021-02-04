@@ -10,7 +10,10 @@ class FragTrap
         FragTrap();
         FragTrap(std::string name);
         ~FragTrap();
-    
+
+        FragTrap(const FragTrap&);
+        FragTrap& operator=(const FragTrap&);
+
         void rangedAttack(std::string const &target);
         void meleeAttack(std::string const &target);
         void takeDamage(unsigned int amount);

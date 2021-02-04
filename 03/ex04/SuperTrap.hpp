@@ -5,7 +5,7 @@
 #include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
 
-class SuperTrap : virtual ClapTrap, public FragTrap, public NinjaTrap
+class SuperTrap : public NinjaTrap, public FragTrap
 {
     public:
         SuperTrap();
