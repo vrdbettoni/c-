@@ -12,7 +12,7 @@ void Logger::logToFile(std::string log)
 
 std::string Logger::makeLogEntry(std::string line)
 {
-time_t      rawtime;
+    time_t      rawtime;
     struct tm*  timeinfo;
     std::stringstream log;
 

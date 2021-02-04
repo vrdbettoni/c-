@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 20:04:41 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/06/27 03:08:49 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/02/04 09:38:02 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ void    ZombieEvent::setZombieType(std::string const &type)
 
 Zombie  *ZombieEvent::newZombie(std::string const &name)
 {
-    return (new Zombie(this->m_type, name));
+    return (new Zombie(name, this->m_type));
 }
 
-Zombie  *ZombieEvent::randomChump(int j)
+void     ZombieEvent::randomChump(int j)
 {
     Zombie *zombie;
 
     zombie = new Zombie(Zombie::getName(j), this->m_type);
     zombie->advert();
-    return(zombie);
 }
 

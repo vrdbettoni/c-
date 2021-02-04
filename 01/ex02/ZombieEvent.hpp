@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 20:04:45 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/06/27 03:06:47 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/02/04 09:37:54 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ZombieEvent
         void    setZombieType(std::string const &type);
         void    announce();
         Zombie  *newZombie(std::string const &name);
-        Zombie  *randomChump(int j);
+        void    randomChump(int j);
 
     private:
         std::string     m_type;

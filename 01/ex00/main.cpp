@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vroth-di <vroth-di@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: vroth-di <vroth-di@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 14:08:20 by vroth-di          #+#    #+#             */
-/*   Updated: 2020/06/26 15:21:36 by vroth-di         ###   ########.fr       */
+/*   Updated: 2021/02/04 09:16:16 by vroth-di         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    a_pony_on_the_stack()
 
 void    a_pony_on_the_heap()
 {
-    Pony *onHeap{new Pony("Patrick")};
+    Pony *onHeap = new Pony("Patrick");
 
     onHeap->galoping();
     onHeap->neighing();

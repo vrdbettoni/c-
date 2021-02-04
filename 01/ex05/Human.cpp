@@ -5,7 +5,7 @@ Human::Human()
     
 }
 
-const Brain &Human::getBrain()
+const Brain&  Human::getBrain()
 {
     return (_brain);
 }

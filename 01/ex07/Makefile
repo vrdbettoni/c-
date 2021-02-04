@@ -13,7 +13,7 @@ all:	$(NAME)
 
 $(NAME):$(OBJS)
 		$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-		@echo "\x1b[32;01mlreplace created \x1b[0m"
+		@echo "\x1b[32;01mreplace created \x1b[0m"
 
 %.o: 		%.c $(HEADER)
 			@$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@

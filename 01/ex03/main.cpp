@@ -3,7 +3,8 @@
 
 int     main()
 {
+    srand(time(NULL));
     ZombieHorde zh = ZombieHorde(4);
     zh.announce();
-    return (1);
+    return (0);
 }
