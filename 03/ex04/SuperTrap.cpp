@@ -19,3 +19,16 @@ SuperTrap::~SuperTrap()
 {
     std::cout << _name << " deleted" << std::endl;
 }
+
+SuperTrap::SuperTrap(const SuperTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+SuperTrap& SuperTrap::operator=(const SuperTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}

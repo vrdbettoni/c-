@@ -14,6 +14,19 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name), _name(name)
     setStats(100, 100, 100, 100, 1, 30, 20, 5);
 }
 
+FragTrap::FragTrap(const FragTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}
+
 FragTrap::~FragTrap()
 {
     std::cout << _name << " deleted" << std::endl;

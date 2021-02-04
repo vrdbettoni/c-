@@ -12,6 +12,9 @@ class NinjaTrap : public virtual ClapTrap
         NinjaTrap(std::string name);
         ~NinjaTrap();
 
+        NinjaTrap(const NinjaTrap&);
+        NinjaTrap& operator=(const NinjaTrap&);
+
         void ninjaShoebox(NinjaTrap &at);
         void ninjaShoebox(ClapTrap &at);
         void ninjaShoebox(FragTrap &at);

@@ -16,6 +16,19 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _name(name)
 
 ScavTrap::~ScavTrap(){std::cout << _name << " deleted" << std::endl;}
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+{
+    std::cout << "Assignement operator called" << std::endl;
+    ClapTrap::operator=(other);
+    return (*this);
+}
+
 void ScavTrap::challengeNewcomer()
 {
     std::string challenge[5] = {" try to catch a hen", " run", " is wimming 10km", " try to fly", " can't do the challenge"};

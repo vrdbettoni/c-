@@ -12,6 +12,9 @@ class SuperTrap : public NinjaTrap, public FragTrap
         SuperTrap(std::string name);
         ~SuperTrap();
 
+        SuperTrap(const SuperTrap&);
+        SuperTrap& operator=(const SuperTrap&);
+
     private:
         std::string _name;
 };

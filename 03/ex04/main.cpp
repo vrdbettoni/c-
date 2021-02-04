@@ -5,11 +5,6 @@
 
 int main(void)
 {
-
-
-
-
-
     std::cout << "\n Test FrapTrap" << std::endl;
     FragTrap a("Jacques");
     a.rangedAttack("Joselyne");
