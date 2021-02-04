@@ -14,7 +14,7 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name), _name(name)
     setStats(60, 60, 120, 120, 1, 60, 5, 0);
 }
 
-NinjaTrap::~NinjaTrap(){std::cout << _name << " deleted" << std::endl;}
+NinjaTrap::~NinjaTrap(){std::cout << "NinjaTrap " << _name << " deleted" << std::endl;}
 
 NinjaTrap::NinjaTrap(const NinjaTrap& other)
 {

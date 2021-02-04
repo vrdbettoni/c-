@@ -11,7 +11,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << _name << " deleted (ClapTrap)" << std::endl;
+    std::cout << "ClapTrap " << _name << " deleted" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)

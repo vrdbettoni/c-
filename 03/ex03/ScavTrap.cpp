@@ -31,7 +31,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 
 void ScavTrap::challengeNewcomer()
 {
-    std::string challenge[5] = {" try to catch a hen", " run", " is wimming 10km", " try to fly", " can't do the challenge"};
+    std::string challenge[5] = {" try to catch a hen", " run", " is swimming 10km", " try to fly", " can't do the challenge"};
     if (_energyPoints >= 25){
         std::cout << _name << challenge[(rand()%50) / 10] << std::endl;
         _energyPoints -= 25;

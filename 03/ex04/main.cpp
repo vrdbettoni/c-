@@ -16,7 +16,7 @@ int main(void)
         a.vaulthunter_dot_exe("Michel");
 
     std::cout << "\n Test ScavTrap" << std::endl;
-    ScavTrap b("Jacques");
+    ScavTrap b("Joselyne");
     b.takeDamage(20);
     b.rangedAttack("Jacques");
     b.meleeAttack("Jacques");

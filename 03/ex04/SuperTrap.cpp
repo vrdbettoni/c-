@@ -11,8 +11,7 @@ SuperTrap::SuperTrap() : NinjaTrap("Jean"), FragTrap("Jean")
 SuperTrap::SuperTrap(std::string name) : NinjaTrap(name), FragTrap(name), _name(name)
 {
     std::cout << "SuperTrap " << _name << " created" << std::endl;
-    setStats(FragTrap::_hitPoints, FragTrap::_maxHitPoints, NinjaTrap::_energyPoints, NinjaTrap::_maxEnergyPoints, 1, NinjaTrap::_meleeAttackDamage, FragTrap::_rangedAttackDamage, FragTrap::_armorReduction);
-    std::cout << "HITPOINTS = " << _hitPoints << std::endl;
+    setStats(100, 100, 120, 120, 1, 60, 20, 5);
 }
 
 SuperTrap::~SuperTrap()

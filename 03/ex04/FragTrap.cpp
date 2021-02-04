@@ -29,7 +29,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 
 FragTrap::~FragTrap()
 {
-    std::cout << _name << " deleted" << std::endl;
+    std::cout << "FragTrap " << _name << " deleted" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
