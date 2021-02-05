@@ -98,6 +98,11 @@ Fixed Fixed::operator*(const Fixed& newone)
 Fixed Fixed::operator/(const Fixed& newone)
 {
     Fixed ret(*this);
+    if (newone.getRawBits() == 0){
+        std::cout << "Division par 0" << std::endl;
+        ret.setRawBits(0);
+        return (ret);
+    }
     ret.setRawBits(ret.getRawBits() * (1 << Fixed::nbits) / newone.getRawBits());
     return (ret);
 }

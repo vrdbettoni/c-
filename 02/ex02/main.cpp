@@ -51,6 +51,8 @@ int main(void) {
     std::cout << f << std::endl;
     std::cout << Fixed::max( e, f ) << std::endl;
 
-
+    Fixed g = 5;
+    e = 0;
+    std::cout << " Division par 0 "  << g / e << std::endl;
     return 0;
 }
