@@ -17,7 +17,9 @@ class Character
         void                recoverAP();
         void                equip(AWeapon*);
         void                attack(Enemy*);
-    
+        int                 getAp() const;
+        AWeapon*            getWeapon() const;
+
     private:
         Character();
         std::string     _name;
