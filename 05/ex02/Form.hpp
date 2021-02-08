@@ -20,13 +20,18 @@ class Form
         bool                isSigned() const;
         void                beSigned(Bureaucrat const &);
 
+        virtual void actionOnTarget() const = 0;
+        void         execute(Bureaucrat const &executor) const;
+
         class GradeTooHighException : public std::exception
         {virtual const char *what() const throw();};
-
         class GradeTooLowException : public std::exception
         {virtual const char *what() const throw();};
-
         class GradeTooLowExceptionForSignature : public std::exception
+        {virtual const char *what() const throw();};
+        class ExecutionNeedSignature : public std::exception
+        {virtual const char *what() const throw();};
+        class GradeTooLowExceptionForExecution : public std::exception
         {virtual const char *what() const throw();};
 
     private:
