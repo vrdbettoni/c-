@@ -1,39 +1,22 @@
 #include "Fixed.hpp"
 
 // Constructor
-Fixed::Fixed() : fixed_value(0)
-{
-    std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed() : fixed_value(0){}
 
-Fixed::Fixed(const int toconvert) : fixed_value(toconvert << nbits)
-{
-    std::cout << "Constructor for int called" << std::endl;
-}
+Fixed::Fixed(const int toconvert) : fixed_value(toconvert << nbits){}
 
-Fixed::Fixed(const float toconvert) : fixed_value(roundf(toconvert * ( 1 << nbits)))
-{
-    std::cout << "Constructor for float called" << std::endl;
-}
+Fixed::Fixed(const float toconvert) : fixed_value(roundf(toconvert * ( 1 << nbits))){}
 
-Fixed::Fixed(const Fixed& newone)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    this->fixed_value = newone.getRawBits();
-}
+Fixed::Fixed(const Fixed& newone){this->fixed_value = newone.getRawBits();}
 
 Fixed& Fixed::operator=(const Fixed& nenwone)
 {
-    std::cout << "Assignation operator called" << std::endl;
     this->fixed_value = nenwone.getRawBits();
     return (*this);
 }
 
 // Destructor
-Fixed::~Fixed() 
-{
-    std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed() {}
 
 //Overload <<
 std::ostream& operator<<(std::ostream &flux, Fixed const& fixed)
@@ -43,17 +26,9 @@ std::ostream& operator<<(std::ostream &flux, Fixed const& fixed)
 }
 
 // Member Functions
-int Fixed::getRawBits() const 
-{
-    std::cout << "getRawBits member function called" << std::endl;
-    return (fixed_value);
-}
+int Fixed::getRawBits() const {return (fixed_value);}
 
-void Fixed::setRawBits(int const raw)
-{
-    std::cout << "setRawBits member function called" << std::endl;
-    fixed_value = raw;
-}
+void Fixed::setRawBits(int const raw){fixed_value = raw;}
 
 float Fixed::toFloat(void) const
 {
