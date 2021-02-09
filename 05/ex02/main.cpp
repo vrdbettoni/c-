@@ -26,6 +26,7 @@ int main()
         try{
             std::cout << a;
             team[i].signForm(a);
+            std::cout << a;
             team[i].executeForm(a);
             shruberry = true;
         }
@@ -36,6 +37,7 @@ int main()
         try{
             std::cout << b;
             team[i].signForm(b);
+            std::cout << b;
             team[i].executeForm(b);
             robotomy = true;
         }
@@ -44,8 +46,9 @@ int main()
         }
         std::cout << std::endl;
         try{
-            std::cout << a;
+            std::cout << c;
             team[i].signForm(c);
+            std::cout << c;
             team[i].executeForm(c);
             presidential = true;
         }
