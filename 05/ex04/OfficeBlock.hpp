@@ -10,17 +10,18 @@ class Officeblock
 {
     public:
         Officeblock();
-        Officeblock(Intern const &intern, Bureaucrat const &signer, Bureaucrat const &executer);
+        Officeblock(Intern *intern, Bureaucrat *signer, Bureaucrat *executer);
+        ~Officeblock();
 
-        void setInter(Intern const &intern);
-        void setSigner(Bureaucrat const &signer);
-        void setExecuter(Bureaucrat const &executer);
-        void doBureaucracy(std::string const formName, std::string const target);
+        void setInter(Intern *intern);
+        void setSigner(Bureaucrat *signer);
+        void setExecuter(Bureaucrat *executer);
+        void doBureaucracy(const std::string &formName, const std::string &target);
 
     private:
-        Intern const      *_intern;
-        Bureaucrat const  *_signer;
-        Bureaucrat const  *_executer;
+        const Intern      *_intern;
+        const Bureaucrat  *_signer;
+        const Bureaucrat  *_executer;
 };
 
 #endif

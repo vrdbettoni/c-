@@ -3,40 +3,46 @@
 Officeblock::Officeblock() : _intern(0), _signer(0), _executer(0)
 {}
 
-Officeblock::Officeblock(Intern const &intern, Bureaucrat const &signer, Bureaucrat const &executer)
-    : _intern(&intern), _signer(&signer), _executer(&executer)
+Officeblock::Officeblock(Intern *intern, Bureaucrat *signer, Bureaucrat *executer)
+    : _intern(intern), _signer(signer), _executer(executer)
 {}
 
 Officeblock::~Officeblock()
 {}
 
-void Officeblock::setInter(Intern const &intern)
+void Officeblock::setInter(Intern *intern)
 {
     if (_intern)
         std::cout << "Old intern was fire" << std::endl;
-    _intern = &intern;
+    _intern = intern;
 }
 
-void Officeblock::setSigner(Bureaucrat const &signer)
+void Officeblock::setSigner(Bureaucrat *signer)
 {
     if (_signer)
         std::cout << "Old signer was fire" << std::endl;
-    _signer = &signer;
+    _signer = signer;
 }
 
-void Officeblock::setExecuter(Bureaucrat const &executer)
+void Officeblock::setExecuter(Bureaucrat *executer)
 {
     if (_executer)
-        std::cout << "Old signer was fire" << std::endl;
-    _executer = &executer;
+        std::cout << "Old executer was fire" << std::endl;
+    _executer = executer;
 }
 
-void Officeblock::doBureaucracy(std::string const formName, std::string const target)
+void Officeblock::doBureaucracy(const std::string &formName, std::string const &target)
 {
-    Form* form;
     if (!_intern || !_signer || !_executer){
         std::cout << "Need a complete team" << std::endl;
         return ;
     }
-    form = _intern->makeForm(formName, target);
+    try{
+        Form *form = this->_intern->makeForm(formName, target);
+        _signer->signForm(*form);
+        _executer->executeForm(*form);
+    }
+    catch(std::exception const &e){
+        std::cout << e.what() << std::endl;
+    }
 }

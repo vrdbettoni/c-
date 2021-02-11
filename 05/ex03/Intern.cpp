@@ -27,6 +27,9 @@ Form *Intern::initRobotomyRequestForm(std::string target)
 Form *Intern::initPresidentialPardonForm(std::string target)
 {return(new PresidentialPardonForm(target));}
 
+const char* Intern::FormDontExist::what() const throw()
+{return ("Form Don't Exist.");}
+
 Form* Intern::makeForm(const std::string form, const std::string target)
 {
     std::string choice[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
@@ -36,5 +39,6 @@ Form* Intern::makeForm(const std::string form, const std::string target)
         if (choice[i] == form)
             return ((this->*iptr[i])(target));
     }
+    throw::Intern::FormDontExist();
     return (0);
 }

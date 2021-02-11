@@ -15,10 +15,13 @@ class Intern
         Intern& operator=(Intern const &);
         ~Intern();
 
-        Form* makeForm(const std::string form, const std::string target);
-        Form* initShrubberyCreationForm(std::string target);
-        Form* initRobotomyRequestForm(std::string target);
-        Form* initPresidentialPardonForm(std::string target);
+        Form* makeForm(const std::string &form, const std::string &target) const;
+        Form* initShrubberyCreationForm(const std::string &target) const;
+        Form* initRobotomyRequestForm(const std::string &target) const;
+        Form* initPresidentialPardonForm(const std::string &target) const;
+
+        class FormDontExist : public std::exception
+        {virtual const char *what() const throw();};
 
     private:
         std::string     _form;

@@ -35,9 +35,11 @@ bool Form::isSigned() const {return(_isSigned);}
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
+    std::cout << bureaucrat.getName() << " try to sign " << getName() << std::endl;
     if (bureaucrat.getGrade() > _gradeSignature)
         throw::Form::GradeTooLowExceptionForSignature();
     _isSigned = true;
+    std::cout << std::boolalpha << "[" << getName() << "] signed : " << isSigned() << " - Grade for signature : " << getGradeSignature() << " - Grade for Execution : " << getGradeExecution() << std::endl;
 }
 
 void Form::execute(Bureaucrat const &executor) const

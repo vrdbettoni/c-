@@ -18,23 +18,27 @@ Intern& Intern::operator=(Intern const &other)
 Intern::~Intern()
 {}
 
-Form *Intern::initShrubberyCreationForm(std::string target)
+Form *Intern::initShrubberyCreationForm(std::string const &target) const
 {return(new ShrubberyCreationForm(target));}
 
-Form *Intern::initRobotomyRequestForm(std::string target)
+Form *Intern::initRobotomyRequestForm(std::string const &target) const
 {return(new RobotomyRequestForm(target));}
 
-Form *Intern::initPresidentialPardonForm(std::string target)
+Form *Intern::initPresidentialPardonForm(std::string const &target) const
 {return(new PresidentialPardonForm(target));}
 
-Form* Intern::makeForm(const std::string form, const std::string target)
+const char* Intern::FormDontExist::what() const throw()
+{return ("Form Don't Exist.");}
+
+Form* Intern::makeForm(const std::string &form, const std::string &target) const
 {
     std::string choice[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
-    typedef Form* (Intern::*internPtr) (std::string message);
+    typedef Form* (Intern::*internPtr) (std::string const &message) const;
     internPtr iptr[] = {&Intern::initShrubberyCreationForm, &Intern::initRobotomyRequestForm, &Intern::initPresidentialPardonForm};
     for (int i = 0; i < 3; i++){
         if (choice[i] == form)
-            return ((this->*iptr[i])(target));
+            return (this->*iptr[i])(target);
     }
+    throw::Intern::FormDontExist();
     return (0);
 }

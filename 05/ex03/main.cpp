@@ -7,7 +7,7 @@
 #include "Intern.hpp"
 
 int main()
-{    
+{ 
     bool        presidential = false;
     bool        robotomy = false;
     bool        shruberry = false;
@@ -20,9 +20,15 @@ int main()
     Form        *b;
     Form        *c;
 
-    a = aRandomIntern.makeForm("ShrubberyCreationForm", "the_garden_of_bob");
-    b = aRandomIntern.makeForm("RobotomyRequestForm", "bob");
-    c = aRandomIntern.makeForm("PresidentialPardonForm", "bob");
+    try{
+        a = aRandomIntern.makeForm("ShrubberyCreationForm", "the_garden_of_bob");
+        b = aRandomIntern.makeForm("RobotomyRequestForm", "bob");
+        c = aRandomIntern.makeForm("PresidentialPardonForm", "bob");
+    }
+    catch(std::exception const &e){
+        std::cout << e.what() << std::endl;
+        return (1);
+    }
 
     int i = 2;
     while (!presidential || !robotomy || !shruberry || i >= 0){

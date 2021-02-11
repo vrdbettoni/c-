@@ -19,7 +19,10 @@ class Intern
         Form* initShrubberyCreationForm(std::string target);
         Form* initRobotomyRequestForm(std::string target);
         Form* initPresidentialPardonForm(std::string target);
-
+        
+        class FormDontExist : public std::exception
+        {virtual const char *what() const throw();};
+        
     private:
         std::string     _form;
         std::string     _target;
