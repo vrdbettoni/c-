@@ -4,10 +4,15 @@
 #include <iostream>
 
 template<typename T>
-    void iter(T& array, int length, void (*f)(T const &e)){
-        for (int i = 0; i < lenght; i++){
+    void iter(T *array, int length, void (*f)(T const &e)){
+        for (int i = 0; i < length; i++){
             (*f)(array[i]);
         }
+    }
+
+template<typename T>
+    void display(T const &toDisplay){
+        std::cout << toDisplay << " ";
     }
 
 #endif
