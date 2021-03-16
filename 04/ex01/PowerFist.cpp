@@ -16,5 +16,5 @@ PowerFist::~PowerFist(){}
 
 void PowerFist::attack() const
 {
-    std::cout << "* pschhh... SBAM ! *" << std::endl;
+    std::cout << "* pschhh... SBAM! *" << std::endl;
 }

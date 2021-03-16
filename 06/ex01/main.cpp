@@ -9,9 +9,7 @@ int main()
 
     void *p;
     p = serialize();
-    write(1, p, 20);
-    std::cout << "\n" << std::endl;
-
+ 
     Data *data;
     data = deserialize(p);
     std::cout << "s1: " << data->s1 << std::endl;

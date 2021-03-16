@@ -34,13 +34,13 @@ std::ostream& operator<<(std::ostream &flux, Sorcerer const& sorcerer)
     buffer += sorcerer.getName();
     buffer += ", ";
     buffer += sorcerer.getTitle();
-    buffer += ", and i like ponies!";
+    buffer += ", and I like ponies!";
     buffer += "\n";
     flux << buffer;
     return (flux);
 }
 
-void Sorcerer::polymorph(Victim const & victim)
+void Sorcerer::polymorph(Victim const & victim) const
 {
     victim.getPolymorphed();
 }

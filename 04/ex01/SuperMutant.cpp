@@ -2,12 +2,12 @@
 
 SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 {
-    std::cout << "Gaaah. Break everything !" << std::endl;
+    std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant::SuperMutant(const SuperMutant& other) : Enemy(other)
 {
-    std::cout << "Gaaah. Break everything !" << std::endl;
+    std::cout << "Gaaah. Me want smash heads !" << std::endl;
 }
 
 SuperMutant& SuperMutant::operator=(const SuperMutant& other)
@@ -19,7 +19,7 @@ SuperMutant& SuperMutant::operator=(const SuperMutant& other)
 
 SuperMutant::~SuperMutant()
 {
-    std::cout << "Aaargh ..." << std::endl;
+    std::cout << "Aaargh..." << std::endl;
 }
 
 void SuperMutant::takeDamage(int damage)

@@ -2,7 +2,7 @@
 
 Victim::Victim(std::string name) : _name(name)
 {
-    std::cout << "A random victim called " << _name << " just appeared!" << std::endl;
+    std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 }
 
 Victim::Victim(const Victim& other){*this = other;}
@@ -15,7 +15,7 @@ Victim& Victim::operator=(const Victim& other)
 
 Victim::~Victim()
 {
-    std::cout << "The victim " << _name << " died for no apparent reasons" << std::endl;
+    std::cout << "Victim " << _name << " died for no apparent reasons" << std::endl;
 }
 
 void Victim::introduce()

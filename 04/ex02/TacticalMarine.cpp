@@ -1,12 +1,14 @@
 #include "TacticalMarine.hpp"
 
 TacticalMarine::TacticalMarine()
-{std::cout << "TacticalMarine ready for actions!" << std::endl;}
+{
+    std::cout << "TacticalMarine ready for battle!" << std::endl;
+}
 
 TacticalMarine::TacticalMarine(TacticalMarine const &other)
 {
     (void)other;
-    std::cout << "TacticalMarine ready for actions!" << std::endl;
+    std::cout << "TacticalMarine ready for battle!" << std::endl;
 }
 
 TacticalMarine& TacticalMarine::operator=(TacticalMarine const &other)
@@ -16,7 +18,9 @@ TacticalMarine& TacticalMarine::operator=(TacticalMarine const &other)
 } 
 
 TacticalMarine::~TacticalMarine()
-{std::cout << "Aaargh ..." << std::endl;}
+{
+    std::cout << "Aaargh ..." << std::endl;
+}
 
 TacticalMarine* TacticalMarine::clone() const
 {

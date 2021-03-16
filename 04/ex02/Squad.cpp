@@ -23,7 +23,7 @@ Squad::~Squad()
     if (_units){
         for (int i = 0; i < _count; i++)
             delete _units[i];
-        delete _units;
+        delete[] _units;
     }
 }
 
@@ -55,7 +55,7 @@ int Squad::push(ISpaceMarine *unit)
             newone[i] = _units[i];
         delete[] _units;
         _units = newone;
-        _units[_count] = unit->clone();
+        _units[_count] = unit;
         _count++;
     }
     return (_count);

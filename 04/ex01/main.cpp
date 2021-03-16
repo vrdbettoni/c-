@@ -10,7 +10,7 @@ int main()
 {
 
     std::cout << "~ Test subject's main ~\n" << std::endl;
-    Character* moi = new Character("moi");
+    Character* moi = new Character("me");
 
     std::cout << *moi;
     Enemy* b = new RadScorpion();
@@ -67,7 +67,6 @@ int main()
     for (int i = 0; i < 5; i++)
         perso->recoverAP();
     perso->equip(plasmaRifle);
-    std::cout << *perso;
     while (1){
         std::cout << *perso;
         if (perso->getAp() < perso->getWeapon()->getAPCost()){

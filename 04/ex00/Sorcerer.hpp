@@ -15,7 +15,7 @@ class Sorcerer
         void introduce();
         const std::string getName() const;
         const std::string getTitle() const;
-        void polymorph(Victim const &);
+        void polymorph(Victim const &) const;
 
     private:
         Sorcerer();
