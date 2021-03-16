@@ -18,7 +18,7 @@ class ClapTrap
         void meleeAttack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        virtual void setStats(int a, int b, int c, int d, int e, int f, int g, int h);
+        void setStats(int a, int b, int c, int d, int e, int f, int g, int h);
         std::string getName(void);
 
     protected:
@@ -32,9 +32,8 @@ class ClapTrap
         int _armorReduction;
 
         void    setStats();
-    
-    private:
         std::string _name;
+        std::string _type;
 };
 
 #endif

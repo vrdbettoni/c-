@@ -4,13 +4,15 @@ ScavTrap::ScavTrap() : ClapTrap("Serena")
 {
     std::cout << "Default constructor called" << std::endl;
     std::cout << "His name is serena" << std::endl;
+    _type = "SCAVTRAP";
     _name = "Serena";
     ScavTrap::setStats();
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap " << _name << " created" << std::endl;
+    std::cout << "SCAVTRAP " << _name << " created" << std::endl;
+    _type = "SCAVTRAP";
     ScavTrap::setStats();
 }
 
@@ -48,9 +50,9 @@ void ScavTrap::challengeNewcomer()
 {
     std::string challenge[5] = {" try to catch a hen", " run", " is wimming 10km", " try to fly", " can't do the challenge"};
     if (_energyPoints >= 25){
-        std::cout << _name << challenge[(rand()%50) / 10] << std::endl;
+        std::cout << _type << " " << _name << challenge[(rand()%50) / 10] << std::endl;
         _energyPoints -= 25;
     }
     else
-        std::cout << "not enough energy points" << std::endl;
+        std::cout << _type << " " << _name << " have not enough energy points" << std::endl;
 }

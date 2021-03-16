@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    srand(time(NULL));
     FragTrap a("Jacques");
     ScavTrap b("Joselyne");
     a.rangedAttack("Joselyne");

@@ -5,7 +5,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class NinjaTrap : public virtual ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
     public:
         NinjaTrap();
@@ -20,8 +20,6 @@ class NinjaTrap : public virtual ClapTrap
         void ninjaShoebox(FragTrap &at);
         void ninjaShoebox(ScavTrap &at);
 
-        private:
-            std::string _name;
 };
 
 #endif

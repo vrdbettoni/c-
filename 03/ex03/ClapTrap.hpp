@@ -32,9 +32,8 @@ class ClapTrap
         int _armorReduction;
 
         void    setStats();
-    
-    private:
         std::string _name;
+        std::string _type;
 };
 
 #endif

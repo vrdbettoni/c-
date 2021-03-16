@@ -4,12 +4,15 @@ SuperTrap::SuperTrap() : NinjaTrap("Jean"), FragTrap("Jean")
 {
     std::cout << "Default constructor called" << std::endl;
     std::cout << "His name is Jean" << std::endl;
+    _type = "SUPERTRP";
     _name = "Jean";
-    setStats(FragTrap::_hitPoints, FragTrap::_maxHitPoints, NinjaTrap::_energyPoints, NinjaTrap::_maxEnergyPoints, 1, NinjaTrap::_meleeAttackDamage, FragTrap::_rangedAttackDamage, FragTrap::_armorReduction);
+    setStats(100, 100, 120, 120, 1, 60, 20, 5);
 }
 
-SuperTrap::SuperTrap(std::string name) : NinjaTrap(name), FragTrap(name), _name(name)
+SuperTrap::SuperTrap(std::string name) : NinjaTrap(name), FragTrap(name)
 {
+    _name = name;
+    _type = "SUPERTRP";
     std::cout << "SuperTrap " << _name << " created" << std::endl;
     setStats(100, 100, 120, 120, 1, 60, 20, 5);
 }

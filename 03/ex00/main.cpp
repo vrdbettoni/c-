@@ -2,6 +2,7 @@
 
 int main(void)
 {
+    srand(time(NULL));
     FragTrap a("Jacques");
     a.rangedAttack("Xoxo");
     a.takeDamage(89);

@@ -95,7 +95,7 @@ void ScavTrap::challengeNewcomer()
 {
     std::string challenge[5] = {" try to catch a hen", " run", " is wimming 10km", " try to fly", " can't do the challenge"};
     if (_energyPoints >= 25){
-        std::cout << "SCAV " << _name << challenge[(rand()%50) / 10] << std::endl;
+        std::cout << "SCAV " << _name << challenge[rand()%5] << std::endl;
         _energyPoints -= 25;
     }
     else

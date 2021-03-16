@@ -14,9 +14,6 @@ class SuperTrap : public NinjaTrap, public FragTrap
 
         SuperTrap(const SuperTrap&);
         SuperTrap& operator=(const SuperTrap&);
-
-    private:
-        std::string _name;
 };
 
 #endif

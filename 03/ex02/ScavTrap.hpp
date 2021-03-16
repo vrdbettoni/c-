@@ -16,10 +16,10 @@ class ScavTrap : public ClapTrap
         ScavTrap& operator=(const ScavTrap&);
     
         void challengeNewcomer(void);
-
+    
     private:
-        std::string _name;
         void setStats();
+
 };
 
 #endif

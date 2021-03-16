@@ -4,27 +4,32 @@
 
 int main(void)
 {
+    srand(time(NULL));
+    std::cout << "Trap Class Creation" << std::endl;
     FragTrap a("Jacques");
     ScavTrap b("Joselyne");
-    NinjaTrap c("NinjaOne");
-    NinjaTrap d("NinjaTwo");
+    NinjaTrap c(".....");
 
-    a.rangedAttack("Joselyne");
-    b.takeDamage(20);
-    b.meleeAttack("Jacques");
-    d.ninjaShoebox(b);
-    a.takeDamage(20);
+    std::cout << "\nAttack" << std::endl;
+    c.rangedAttack("Joselyne");
+    b.takeDamage(5);
+    c.meleeAttack("Jacques");
+    a.takeDamage(60);
     a.meleeAttack("Joselyne");
     b.takeDamage(30);
-    c.ninjaShoebox(d);
+
+    std::cout << "\nRepair" << std::endl;
     a.beRepaired(40);
     a.beRepaired(1000);
+
+    std::cout << "\nSpecial Attack" << std::endl;
     for (int i = 0; i < 5; i++){
         a.vaulthunter_dot_exe("Michel");
         b.challengeNewcomer();
     }
-    a.takeDamage(1000);
-
+    c.ninjaShoebox(c);   
+    c.ninjaShoebox(b);
     c.ninjaShoebox(a);
+    std::cout << std::endl;
     return (0);
 }

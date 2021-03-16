@@ -4,13 +4,15 @@ FragTrap::FragTrap() : ClapTrap("Bobby")
 {
     std::cout << "Default constructor called" << std::endl;
     std::cout << "His name is Bobby" << std::endl;
+    _type = "FRAGTRAP";
     _name = "Bobby";
     FragTrap::setStats();
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name), _name(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "FragTrap " << _name << " created" << std::endl;
+    std::cout << "FRAGTRAP " << _name << " created" << std::endl;
+    _type = "FRAGTRAP";
     FragTrap::setStats();
 }
 
@@ -48,9 +50,9 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
     std::string attack[5] = {" with an m&m's", " with an egg", " with nothing", " with a knife", " with a saber"};
     if (_energyPoints >= 25){
-        std::cout << _name << " attack " << target << attack[(rand()%50) / 10] << std::endl;
+        std::cout << _type << " " << _name << " attack " << target << attack[(rand()%50) / 10] << std::endl;
         _energyPoints -= 25;
     }
     else
-        std::cout << "not enough energy points" << std::endl;
+        std::cout << _type << " " << _name << " have not enough energy points" << std::endl;
 }

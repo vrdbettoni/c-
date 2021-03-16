@@ -94,9 +94,9 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
     std::string attack[5] = {" with an m&m's", " with an egg", " with nothing", " with a knife", " with a saber"};
     if (_energyPoints >= 25){
-        std::cout << "FR4G-TP " << _name << " attack " << target << attack[(rand()%50) / 10] << std::endl;
+        std::cout << "FR4G-TP " << _name << " attack " << target << attack[rand()%5] << std::endl;
         _energyPoints -= 25;
     }
     else
-        std::cout << "FR4G-TP " << "not enough energy points" << std::endl;
+        std::cout << "FR4G-TP " << _name  << " have not enough energy points" << std::endl;
 }

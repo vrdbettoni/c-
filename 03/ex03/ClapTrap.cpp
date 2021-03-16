@@ -24,6 +24,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     std::cout << "Assignement ClapTrap called" << std::endl;
     if (this != &other){
+        _type = other._type;
         _hitPoints = other._hitPoints;
         _maxHitPoints = other._maxHitPoints;
         _energyPoints = other._energyPoints;
@@ -52,18 +53,32 @@ std::string ClapTrap::getName(void){return (_name);}
 
 void ClapTrap::rangedAttack(std::string const &target)
 {
-    std::cout << _name << " attack " << target << " with a gun, for " << _rangedAttackDamage << std::endl;
+    std::cout << _type << " ";
+    if (_type == "FRAGTRAP")
+        std::cout << _name << " attack " << target << " with a gun, for " << _rangedAttackDamage << std::endl;
+    if (_type == "SCAVTRAP")
+        std::cout << _name << " attack " << target << " with a her mind, for " << _rangedAttackDamage << std::endl;
+    if (_type == "NINJATRP")
+        std::cout << _name << " attack " << target << " with a shuriken, for " << _rangedAttackDamage << std::endl;
+
 }
 
 void ClapTrap::meleeAttack(std::string const &target)
 {
-    std::cout << _name << " attack " << target << " with her mind , for " << _meleeAttackDamage << std::endl;
+    std::cout << _type << " ";
+    if (_type == "FRAGTRAP")
+        std::cout << _name << " attack " << target << " with a peeble, for " << _meleeAttackDamage << std::endl;
+    if (_type == "SCAVTRAP")
+        std::cout << _name << " attack " << target << " with a knife , for " << _meleeAttackDamage << std::endl;
+    if (_type == "NINJATRP")
+        std::cout << _name << " attack " << target << " with a nunchaku, for " << _meleeAttackDamage << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
     long long _amount = amount;
 
+    std::cout << _type << " ";
     _amount -= _armorReduction;
     if (_amount > 0){
         if (_amount > _hitPoints)
@@ -79,6 +94,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     long long _amount = amount;
 
+    std::cout << _type << " ";
     if (_amount > _maxHitPoints - _hitPoints)
         _amount = _maxHitPoints - _hitPoints;
         _hitPoints += _amount;

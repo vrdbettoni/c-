@@ -5,20 +5,18 @@
 #include <cstdlib>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
     public:
         ScavTrap();
         ScavTrap(std::string name);
         ~ScavTrap();
-
+    
         ScavTrap(const ScavTrap&);
         ScavTrap& operator=(const ScavTrap&);
-
+        
         void challengeNewcomer(void);
 
-    private:
-        std::string _name;
 };
 
 #endif

@@ -5,6 +5,7 @@
 
 int main(void)
 {
+    srand(time(NULL));
     std::cout << "\n Test FrapTrap" << std::endl;
     FragTrap a("Jacques");
     a.rangedAttack("Joselyne");
@@ -41,9 +42,9 @@ int main(void)
     std::cout << "\n Test Super Trap" << std::endl;
     SuperTrap e("SuperMichelle");
     e.rangedAttack("the wall");
+    e.meleeAttack("another wall");
     e.takeDamage(20);
     e.beRepaired(1000);
-    e.meleeAttack("another wall");
     e.ninjaShoebox(a);
     e.ninjaShoebox(b);
     e.ninjaShoebox(c);

@@ -24,6 +24,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     std::cout << "Assignement ClapTrap called" << std::endl;
     if (this != &other){
+        _type = other._type;
         _hitPoints = other._hitPoints;
         _maxHitPoints = other._maxHitPoints;
         _energyPoints = other._energyPoints;
@@ -38,12 +39,19 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 void ClapTrap::rangedAttack(std::string const &target)
 {
-    std::cout << _name << " attack " << target << " with a gun, for " << _rangedAttackDamage << std::endl;
+    if (_type == "FRAGTRAP")
+        std::cout << _type << " " << _name << " attack " << target << " with a gun, for " << _rangedAttackDamage << std::endl;
+    if (_type == "SCAVTRAP")
+        std::cout << _type << " " << _name << " attack " << target << " with a her mind, for " << _rangedAttackDamage << std::endl;
+
 }
 
 void ClapTrap::meleeAttack(std::string const &target)
 {
-    std::cout << _name << " attack " << target << " with her mind , for " << _meleeAttackDamage << std::endl;
+    if (_type == "FRAGTRAP")
+        std::cout << _type << " " << _name << " attack " << target << " with a peeble, for " << _meleeAttackDamage << std::endl;
+    if (_type == "SCAVTRAP")
+        std::cout << _type << " " << _name << " attack " << target << " with a knife , for " << _meleeAttackDamage << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -55,10 +63,10 @@ void ClapTrap::takeDamage(unsigned int amount)
         if (_amount > _hitPoints)
             _amount = _hitPoints;
         _hitPoints -= _amount;
-        std::cout << _name << " loses " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
+        std::cout << _type << " " << _name << " loses " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
     }
     else
-        std::cout << _name << " is so strong" << std::endl;
+        std::cout << _type << " " << _name << " is so strong" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -70,5 +78,5 @@ void ClapTrap::beRepaired(unsigned int amount)
         _hitPoints += _amount;
     if (_hitPoints > _maxHitPoints)
         _hitPoints = _maxHitPoints;
-     std::cout << _name << " gained " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
+     std::cout << _type << " " << _name << " gained " << _amount << " hit points (" << _hitPoints << " left)" << std::endl;
 }

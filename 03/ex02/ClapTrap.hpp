@@ -29,10 +29,9 @@ class ClapTrap
         int _rangedAttackDamage;
         int _armorReduction;
 
-        void    setStats();
-    
-    private:
+        void        setStats();
         std::string _name;
+        std::string _type;
 };
 
 #endif
