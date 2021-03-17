@@ -24,7 +24,7 @@ int main()
     for (int i = 0; i < 5000; i++)
         tmp.push_back(i - 2500);
     std::cout << "Create a tmp list of " << tmp.size() << " | min: " << tmp.front() << " max: " << tmp.back() << std::endl;
-    std::cout << "Add numbers in one time";
+    std::cout << "Add numbers in one time" << std::endl;
     span.addNumber(tmp.begin(), tmp.end());
     display(span);
     tmp.clear();
